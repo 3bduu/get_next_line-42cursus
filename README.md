@@ -19,7 +19,7 @@ To use the get_next_line function, follow these steps:
 
 Clone the repository:
 ```
-git clone https://github.com/your_username/get_next_line.git
+git clone https://github.com/3bduu/get_next_line-42cursus.git
 ```
 Navigate to the project directory:
 ```
