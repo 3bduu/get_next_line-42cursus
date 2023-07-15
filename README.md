@@ -40,7 +40,7 @@ To use the get_next_line function, include the get_next_line.h header file in yo
 ```
 You can then call the get_next_line function using the following format:
 ```c
-int get_next_line(int fd, char **line);
+char *get_next_line(int fd);
 ```
 The fd parameter is the file descriptor of the file you want to read from, and the line parameter is a pointer to a string where the line will be stored.
 
@@ -49,16 +49,13 @@ The function will return 1 when a line is successfully read, 0 when the end of f
 ## Function
 The function signature of get_next_line is as follows:
 ```c
-int get_next_line(int fd, char **line);
+char *get_next_line(int fd);
 ```
 * fd: The file descriptor for the file to read from.
-* line: A pointer to a string where the line will be stored.
 ## ReturnValues
-The get_next_line function returns the following values:
+The get_next_line function returns:
 
-* 1: A line has been successfully read.
-* 0: The end of file (EOF) has been reached.
-* -1: An error occurred while reading.
+* Line by line
 ## Examples
 Here's an example demonstrating the usage of get_next_line:
 ```c
@@ -74,7 +71,7 @@ int main(void) {
         return 1;
     }
 
-    while (get_next_line(fd, &line) > 0) {
+    while ((line = get_next_line(fd)) {
         printf("%s\n", line);
         free(line);
     }
